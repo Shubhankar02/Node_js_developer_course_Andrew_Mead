@@ -10,10 +10,15 @@ const argv = yargs
             describe: 'Address to fetch weather for',
             string: true
         }
-    });
+    })
+    .help()
+    .alias('help', 'h')
+    .argv;
+
+console.log(argv)
 
 request({
-    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=mulund%20west%20mumbai&key=AIzaSyDfGOG9aoyo4hS4OecPFDRoB-0D7Z42qag',
+    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=mulund%20west%20mumbai&key=AIzaSyAMN_DLvPrJKi7Asrwvn5rdyBVpPGFXBn4',
     json: true
 }, (error, response, body)=>{
     console.log(`latitude: ${body.results[0].geometry.location.lat}`);
