@@ -15,12 +15,15 @@ const argv = yargs
     .alias('help', 'h')
     .argv;
 
-console.log(argv)
+const encoddedAdress = encodeURIComponent(argv.address)
+
+console.log(encoddedAdress)
 
 request({
-    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=mulund%20west%20mumbai&key=AIzaSyAMN_DLvPrJKi7Asrwvn5rdyBVpPGFXBn4',
+    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encoddedAdress}&key=AIzaSyAm6WYzVIZ2LcjfBV_s7KKHv3JBd5SwBbM`,
     json: true
 }, (error, response, body)=>{
+    console.log(`latitude: ${body.results[0].formatted_address}`);
     console.log(`latitude: ${body.results[0].geometry.location.lat}`);
     console.log(`longitude: ${body.results[0].geometry.location.lng}`);
 });
