@@ -2,7 +2,7 @@ const request = require('request');
 
 var geocodeAddress = (address, callback) => {
     const encoddedAdress = encodeURIComponent(address)
-    const key = 'AIzaSyBuXGAb-fft6-MJz_tAqSQhcCA0LwSpJAo';
+    const key = 'AIzaSyCdLt8yDvDxVJ3SDDM83YImnxu9olsbdeo';
 
     console.log(encoddedAdress)
 
@@ -28,3 +28,5 @@ var geocodeAddress = (address, callback) => {
 };
 
 module.exports.geocodeAddress = geocodeAddress;
+
+
