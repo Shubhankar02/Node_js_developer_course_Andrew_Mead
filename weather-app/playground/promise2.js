@@ -1,10 +1,10 @@
 const request = require('request');
 
 
-const geocodeAddress = (address)=>{
+var geocodeAddress = (address)=>{
     return new Promise((resolve, reject)=>{
         const encoddedAdress = encodeURIComponent(address)
-        const key = 'AIzaSyCdLt8yDvDxVJ3SDDM83YImnxu9olsbdeo';
+        const key = 'AIzaSyALa96ZmTtyl3l7ShN8Mnzez00iLsEUeZ0';
     
         console.log(encoddedAdress)
     
@@ -17,7 +17,7 @@ const geocodeAddress = (address)=>{
             } else if (body.status === 'ZERO_RESULTS') {
                 reject('Unable to find the address');
             } else if (body.status === 'OK') {
-                resolve(undefined, {
+                resolve({
                     address: body.results[0].formatted_address,
                     latitude: body.results[0].geometry.location.lat,
                     longitude: body.results[0].geometry.location.lng
