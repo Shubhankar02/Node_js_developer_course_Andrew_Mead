@@ -1,40 +1,24 @@
-console.log('starting notes.js');
+console.log('Starting note.js');
 
-const fs = require('fs');
+const addNote = (title, body) => {
+    console.log('Adding note', title, body);
+}
 
-var addNote = (title, body) => {
-	var notes = [];
-	var note = {
-		title,
-		body
-	};
+const getAll = () => {
+    console.log('Getting all note');
+}
 
-	try {
-		var noteString = fs.readFileSync('note-data.json');
-		notes = JSON.parse(noteString);		
-	} catch (error) {
-		
-	}
+const readNote = (title) => {
+    console.log('Reading note', title);
+}
 
-	notes.push(note)
-	fs.writeFileSync('note-data.json', JSON.stringify(notes))
-};
-
-var getAllNote = () => {
-	console.log('Getting all notes');
-};
-
-var getNote = (title) => {
-	console.log('Getting note', title);
-};
-
-var removeNote = (title) => {
-	console.log('Removing note', title);
-};
+const removeNote = (title) => {
+    console.log('Note removed', title);
+}
 
 module.exports = {
-	addNote,
-	getAllNote,
-	getNote,
-	removeNote
+    addNote,
+    getAll,
+    readNote,
+    removeNote
 };
