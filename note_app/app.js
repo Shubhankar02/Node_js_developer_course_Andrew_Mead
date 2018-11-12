@@ -6,16 +6,11 @@ const notes = require('./notes');
 
  
 const argv = yargs.argv;  
-console.log('Process:', process.argv);
-console.log('Yargs', argv);
-
-
-
+// console.log('Process:', process.argv);
+// console.log('Yargs', argv);
 const command = process.argv[2]
-
-
 if (command === 'add') {
-    notes.addNote(argv.title, argv.body)
+    notes.addNote(argv.title, argv.body);
 } else if (command === 'list') {
     notes.getAll()
 } else if (command === 'read') {
