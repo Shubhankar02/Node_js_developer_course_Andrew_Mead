@@ -47,7 +47,8 @@ if (command === 'add') {
         console.log(note)
     });
 } else if (command === 'read') {
-    notes.readNote(argv.title)
+    note = notes.readNote(argv.title)
+    note.length > 0 ? console.log(`Note found \ntitle: ${note[0].title} \nbody: ${note[0].body}`) : console.log('Note not found');
 } else if (command === 'remove') {
     notes.removeNote(argv.title)
 } else {
