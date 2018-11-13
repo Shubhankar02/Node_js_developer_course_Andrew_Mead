@@ -38,7 +38,11 @@ const getAll = () => {
 };
 
 const readNote = (title) => {
-    console.log('Reading note', title);
+    // Get all the notes
+    const notes = fetchNotes();
+    // filter the note which we want by the titile mentioned im the argument
+    const filteredNotes = notes.filter((note) => note.title === title)
+    return filteredNotes;
 };
 
 const removeNote = (title) => {
