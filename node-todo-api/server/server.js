@@ -26,5 +26,7 @@ app.listen(3000, () => {
     console.log('Server has started on PORT 3000');
 })
 
-
+module.exports = {
+    app
+}
 
